@@ -1849,8 +1849,8 @@ class MySQL
 	$MM_donotCheckaccess = "false";
 	
 	$MM_restrictGoTo = "../index.php";
-	if (!((isset($_SESSION['HMIS_username'])) && ($this->isAuthorized("",$MM_authorizedUsers,
-            $_SESSION['HMIS_username'], $_SESSION['HMIS_UserGroup'])))) {
+	if (!((isset($_SESSION['P2P_username'])) && ($this->isAuthorized("",$MM_authorizedUsers,
+            $_SESSION['P2P_username'], $_SESSION['P2P_UserGroup'])))) {
 	  $MM_qsChar = "?";
 	  $MM_referrer = $_SERVER['PHP_SELF'];
 	  if (strpos($MM_restrictGoTo, "?")) $MM_qsChar = "&";

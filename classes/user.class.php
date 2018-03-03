@@ -143,14 +143,11 @@ class User extends MySQL
         $gtemail = '';
             $sid = $name_sid[0];
             $name = $name_sid[1];
-            $this->Query("SELECT corporate_email,personal_email FROM staff WHERE id = $sid");
+            $this->Query("SELECT email FROM membership WHERE id = $sid");
             $row = $this->Row();
-            if($row->corporate_email) {
-                $gtemail = trim($row->corporate_email);
-            }
-            elseif($row->personal_email){
-                $gtemail = trim($row->personal_email);
-            }
+
+                $gtemail = trim($row->email);
+
             if($gtemail){
 
                 echo $gtemail;exit;

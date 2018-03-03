@@ -67,7 +67,7 @@ if($menu_count > 0) {
                         </a>
                         <ul class="treeview-menu">
                             <?php foreach($child as $sub){ if($parent['link_id']==$sub['link_parent']){ ?>
-                                <li class="treeview <?php if(isset($page_sub) && $page_sub==$sub['page_id_sub']){echo "active";}?>">
+                                <li class="<?php if(isset($page_sub) && $page_sub==$sub['page_id_sub']){echo "active";}?>">
                                     <a href="<?php echo $sub['link_url'] ?>"><i style="color: #f39c12;" class="<?php echo $sub['link_image'] ?>"></i><?php echo $sub['link_name']; ?></a></li>
                             <?php }}?>
                         </ul>

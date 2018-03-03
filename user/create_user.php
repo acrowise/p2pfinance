@@ -5,9 +5,11 @@
  * Date: 04/01/2018
  * Time: 04:25 PM
  */
+
 session_start();
 require_once('../classes/mysql.class.php');
 require_once('../classes/util.class.php');
+
 $object = new MySQL();
 $util = new Util();
 $object->checkLogin();
@@ -15,75 +17,27 @@ $page = "user";
 $page_sub = "create_user";
 ?>
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Limitless - Create User</title>
+    <meta charset="UTF-8">
+    <title>P2PFinance | Create User</title>
+    <meta content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no' name='viewport'>
+    <meta name="description" content="Developed By M Abdur Rokib Promy">
+    <meta name="keywords" content="Admin, Bootstrap 3, Template, Theme, Responsive">
+    <!-- bootstrap 3.0.2 -->
+
 </head>
-<!-- Global stylesheets -->
-<?php require'../inc/header.php';?>
-<!-- Page container -->
-<div class="page-container">
+<body class="skin-black">
+<!-- header logo: style can be found in header.less -->
+<?php require_once('../inc/header.php');?>
+<div class="wrapper row-offcanvas row-offcanvas-left">
+    <!-- Left side column. contains the logo and sidebar -->
+    <?php require_once('../inc/sidebar.php')?>
 
-    <!-- Page content -->
-    <div class="page-content">
-
-        <!-- Main sidebar -->
-        <?php require'../inc/menu.php';?>
-        <!-- /main sidebar -->
-
+    <aside class="right-side">
 
         <!-- Main content -->
-        <div class="content-wrapper">
-
-            <!-- Page header -->
-            <div class="page-header page-header-default">
-                <div class="page-header-content">
-                    <div class="page-title">
-                        <h4><i class="icon-arrow-left52 position-left"></i> <span class="text-semibold">User Management</span> - Create User</h4>
-                    </div>
-
-                    <div class="heading-elements">
-                        <div class="heading-btn-group">
-                            <a href="#" class="btn btn-link btn-float text-size-small has-text"><i class="icon-bars-alt text-primary"></i><span>Statistics</span></a>
-                            <a href="#" class="btn btn-link btn-float text-size-small has-text"><i class="icon-calculator text-primary"></i> <span>Invoices</span></a>
-                            <a href="#" class="btn btn-link btn-float text-size-small has-text"><i class="icon-calendar5 text-primary"></i> <span>Schedule</span></a>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="breadcrumb-line">
-                    <ul class="breadcrumb">
-                        <li><a href="#"><i class="icon-user position-left"></i> User Management</a></li>
-                        <li class="active">Create User</li>
-                    </ul>
-
-                    <ul class="breadcrumb-elements">
-                        <li class="dropdown">
-                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                                <i class="icon-gear position-left"></i>
-                                Settings
-                                <span class="caret"></span>
-                            </a>
-
-                            <ul class="dropdown-menu dropdown-menu-right">
-                                <li><a href="#"><i class="icon-user-lock"></i> Account security</a></li>
-                                <li><a href="#"><i class="icon-statistics"></i> Analytics</a></li>
-                                <li><a href="#"><i class="icon-accessibility"></i> Accessibility</a></li>
-                                <li class="divider"></li>
-                                <li><a href="#"><i class="icon-gear"></i> All settings</a></li>
-                            </ul>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-            <!-- /page header -->
-
-
-            <!-- Content area -->
-            <div class="content">
+            <section class="content">
 
                 <!-- Dashboard content -->
                 <div class="row">
@@ -94,13 +48,7 @@ $page_sub = "create_user";
                         <div class="panel panel-flat">
                             <div class="panel-heading">
                                 <h6 class="panel-title">Create User</h6>
-                                <div class="heading-elements">
-                                    <ul class="icons-list">
-                                        <li><a data-action="collapse"></a></li>
-                                        <li><a data-action="reload"></a></li>
-                                        <li><a data-action="close"></a></li>
-                                    </ul>
-                                </div>
+
                             </div>
 
                             <div class="panel-body">
@@ -108,7 +56,7 @@ $page_sub = "create_user";
                                     <form id="form" method="post">
                                         <div class="box-body">
 
-                                            <div align="center"><img src="../dist/img/spinner-grey.gif" alt="loading" id="wait" style="display: none; margin-top: -8px;"></div>
+                                            <div align="center"><img src="../img/spinner.gif" alt="loading" id="wait" style="display: none; margin-top: -8px;"></div>
                                             <p id="ack" class="login-box-msg"></p>
                                             <br>
 
@@ -118,11 +66,11 @@ $page_sub = "create_user";
                                                         <label for="name" class="col-sm-2 control-label">Name</label>
 
                                                         <div class="col-sm-10">
-                                                            <select name="fullname" id="fullname"  data-placeholder="Select Staff..." class="select-size-lg">
-                                                                <option></option>                                                                <?php $uname = new MySQL;  $uname->Query("SELECT * FROM staff ORDER BY firstname ASC");
+                                                            <select name="fullname" id="fullname"  data-placeholder="Select Staff..." class="form-control select-size-lg">
+                                                                <option></option>                                                                <?php $uname = new MySQL;  $uname->Query("SELECT * FROM membership ORDER BY first_name ASC");
                                                                 while(!$uname->EndOfSeek()){$urow = $uname->Row(); ?>
-                                                                    <option value="<?php echo $urow->id .":".$urow->surname.' '.$urow->firstname; ?>">
-                                                                        <?php echo "$urow->firstname $urow->surname";?>
+                                                                    <option value="<?php echo $urow->id .":".$urow->last_name.' '.$urow->first_name; ?>">
+                                                                        <?php echo "$urow->first_name $urow->last_name";?>
                                                                     </option>
                                                                 <?php }?>
                                                             </select>
@@ -137,8 +85,7 @@ $page_sub = "create_user";
                                                     <div class="form-group">
                                                         <label for="description" class="col-sm-2 control-label">category</label>
                                                         <div class="col-sm-10">
-                                                            <select name="category" id="category"  data-placeholder="Select Staff Category..." class="select-size-lg">
-                                                                <option></option>
+                                                            <select name="category" id="category"  data-placeholder="Select Staff Category..." class="form-control select-size-lg">
                                                                 <?php $cat = new MySQL; $cat->MoveFirst(); $cat->Query("SELECT * FROM usr_cat ORDER BY cat_name ASC");
                                                                 while(!$cat->EndOfSeek()){$row = $cat->Row(); ?>
                                                                     <option value="<?php echo $row->cat_id; ?>"><?php echo $row->cat_name ;?></option>
@@ -191,24 +138,10 @@ $page_sub = "create_user";
                     </div>
                 <!-- /dashboard content -->
                 </div>
-            </div>
+            </section>
+        <?php require_once('../inc/footer.php');?>
+    </aside><!-- /.right-side -->
 
-                <!-- Footer -->
-
-                <?php require'../inc/footer.php';?>
-
-                <!-- /footer -->
-
-            </div>
-            <!-- /content area -->
-
-        </div>
-        <!-- /main content -->
-
-    </div>
-    <!-- /page content -->
-
-</div>
 <!-- /page container -->
     <script>
         $(document).on('click','#add',function(e){

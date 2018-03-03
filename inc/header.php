@@ -31,7 +31,7 @@
 </style>
 <header class="header">
     <a href="../inc/dashboard.php" class="logo">
-        Director
+       P2P Finance
     </a>
     <!-- Header Navbar: style can be found in header.less -->
     <nav class="navbar navbar-static-top" role="navigation">
@@ -56,13 +56,9 @@
 
 
                         <li>
-                            <a href="#">
+                            <a href="../member/profile.php">
                                 <i class="ion-person pull-right"></i>
                                 Profile
-                            </a>
-                            <a data-toggle="modal" href="#modal-user-settings">
-                                <i class="ion-gear-a pull-right"></i>
-                                Settings
                             </a>
                         </li>
 

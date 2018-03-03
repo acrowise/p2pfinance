@@ -6,7 +6,7 @@
   <title>Sign-Up/Login Form</title>
   <link href='http://fonts.googleapis.com/css?family=Lato' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
-
+    <link  rel="stylesheet" href="css/bootstrap.min.css">
   
       <link rel="stylesheet" href="css/style-login.css">
 
@@ -145,7 +145,7 @@
   <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
 
   
-
+    <script src="js/bootstrap.min.js"></script>
     <script  src="js/index.js"></script>
     <script src="js/auth.js"></script>
 
