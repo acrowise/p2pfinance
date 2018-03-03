@@ -22,7 +22,7 @@ class MySQL
 	private $db_host    = "localhost"; // server name
 	private $db_user    = 'root';          // user name
 	private $db_pass    = '';
-	private $db_dbname  = "hmis";          // database name
+	private $db_dbname  = "p2pfinance";          // database name
 	private $db_charset = "";          // optional character set (i.e. utf8)
 	private $db_pcon    = false;      // use persistent connection?
 

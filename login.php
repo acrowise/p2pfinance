@@ -27,25 +27,25 @@
         <div id="login">   
           <h2>Welcome Back!</h2>
           
-          <form action="/" method="post">
-          
+          <form action="/" method="post" id="loginForm">
+              <div id="ack" align="center"></div>
             <div class="field-wrap">
             <label>
               Email Address<span class="req">*</span>
             </label>
-            <input type="email"required autocomplete="off"/>
+            <input type="email" name="username" id="username" required autocomplete="off"/>
           </div>
           
           <div class="field-wrap">
             <label>
               Password<span class="req">*</span>
             </label>
-            <input type="password"required autocomplete="off"/>
+            <input type="password" name="password" id="password" required autocomplete="off"/>
           </div>
           
           <p class="forgot"><a href="forgot-password.html">Forgot Password?</a></p>
           
-          <button class="button button-block"/>Log In</button>
+          <button type="submit" class="button button-block" id="loginBtn"/>Log In</button>
           
           </form>
 
@@ -147,7 +147,7 @@
   
 
     <script  src="js/index.js"></script>
-
+    <script src="js/auth.js"></script>
 
 
 
