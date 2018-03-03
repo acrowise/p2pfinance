@@ -105,7 +105,7 @@ class Auth extends MySQL
 
     }
     public  function getRecord($username){
-        $Login_query = "SELECT * FROM usr_users WHERE username = '$username'";
+        $Login_query = "SELECT user_id,username,user_cat,user_status,user_fullname,sid FROM usr_users WHERE username = '$username'";
         return $this->QuerySingleRowArray($Login_query,MYSQLI_ASSOC);
     }
     public function updateUserLogin($stampid,$logintime){
@@ -119,7 +119,7 @@ class Auth extends MySQL
             );
         }
         session_destroy();
-        return 'Location:../index.php';
+        return 'Location:../login.php';
     }
     private function _sanitizeInputs() {
         $minPosLength = $this->forgot_pass['minNumbers'] + $this->forgot_pass['minLetters'] + $this->forgot_pass['minSymbols'];

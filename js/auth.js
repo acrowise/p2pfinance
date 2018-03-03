@@ -36,7 +36,8 @@ $(function () {
                 success: function (msg) {
                     if (msg === "ok") {
                         $("#lgwait").css("display", "none");
-                        $('#ack').html('<div class="alert alert-success"> Login successful </div>' + "<img src='img/spinner.gif' /> Redirecting ...").fadeIn(1900, function () {
+                        $('#ack').addClass('alert alert-success');
+                        $('#ack').html('<div class="alert alert-success" style="background-color: greenyellow"> Login successful </div>' + "<img src='img/spinner.gif' /> Redirecting ...").fadeIn(1900, function () {
                             setInterval(function () {
                                 $("form")[0].reset();
                                 location = "inc/dashboard.php";

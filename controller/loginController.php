@@ -71,15 +71,15 @@ if(empty($_POST)=== false){
 
             $sess_row = $newUser->getRecord($username);
 
-            $_SESSION['HMIS_username'] = $sess_row['user_fullname'];
-            $_SESSION['HMIS_UserGroup'] = $sess_row['user_cat'];
-            $_SESSION['HMIS_user'] = $sess_row;
+            $_SESSION['P2P_username'] = $sess_row['user_fullname'];
+            $_SESSION['P2P_UserGroup'] = $sess_row['user_cat'];
+            $_SESSION['P2P_user'] = $sess_row;
 
 
             $logintime = date("Y-m-d H:i:s");
-            $stampid = $_SESSION['HMIS_user']['user_id'];
+            $stampid = $_SESSION['P2P_user']['user_id'];
 
-            $userid = $_SESSION['HMIS_user']['user_id'];
+            $userid = $_SESSION['P2P_user']['user_id'];
             $ipaddress = "";
             $ipaddress = $_SERVER['REMOTE_ADDR'];
             $login_date =  date("Y-m-d h:i:s");
@@ -93,7 +93,7 @@ if(empty($_POST)=== false){
             $sql = MySQL::BuildSQLInsert($table,$valuesArray);
             $newUser->Query($sql);
             $last_id = $newUser->GetLastInsertID();
-            $_SESSION['HMIS_login'] =  $last_id;
+            $_SESSION['P2P_login'] =  $last_id;
 
             echo "ok";exit;
 
