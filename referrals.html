@@ -34,7 +34,7 @@
 <body class="skin-black">
 <!-- header logo: style can be found in header.less -->
 <header class="header">
-    <a href="index.html" class="logo">
+    <a href="login.html" class="logo">
         Director
     </a>
     <!-- Header Navbar: style can be found in header.less -->
@@ -155,9 +155,10 @@
 
 
             <!-- Main row -->
-            <div class="row">
 
-                <div class="col-md-8">
+                    <div class="row">
+
+                        <div class="col-md-8">
                     <!--earning graph start-->
                     <section class="panel">
                         <header class="panel-heading">
@@ -167,7 +168,7 @@
                             <table class="table table-condensed">
                                 <tr>
                                     <th style="width: 10px">#</th>
-                                    <th>Member Name</th>
+                                    <th>Reference Name</th>
                                     <th>Mobile Number</th>
                                     <th >Amount</th>
                                     <th style="width: 40px;">Status</th>
@@ -193,7 +194,7 @@
                         </div><!-- /.panel-body -->
                     </section>
                 </div>
-                <div class="col-lg-4">
+                <div class="col-md-4">
 
                     <!--chat start-->
                     <section class="panel">
@@ -254,7 +255,14 @@
 
 <!-- Director for demo purposes -->
 
+<script>
+    $('#noti-box').slimScroll({
+        height: '450px',
+        size: '5px',
+        BorderRadius: '5px'
+    });
 
+</script>
 
 </body>
 </html>

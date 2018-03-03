@@ -34,7 +34,7 @@
 <body class="skin-black">
 <!-- header logo: style can be found in header.less -->
 <header class="header">
-    <a href="index.html" class="logo">
+    <a href="login.html" class="logo">
         Director
     </a>
     <!-- Header Navbar: style can be found in header.less -->
@@ -166,19 +166,19 @@
                         <header class="panel-heading tab-bg-dark-navy-blue">
                             <ul class="nav nav-tabs">
                                 <li class="active">
-                                    <a data-toggle="tab" href="#home-2">
+                                    <a data-toggle="tab" href="#profile">
                                         <i class="ion-person"></i>
                                         Profile
                                     </a>
                                 </li>
                                 <li >
-                                    <a data-toggle="tab" href="#about-2">
+                                    <a data-toggle="tab" href="#account">
                                         <i class="ion-briefcase"></i>
                                         Account
                                     </a>
                                 </li>
-                                <li class="">
-                                    <a data-toggle="tab" href="#contact-2">
+                                <li >
+                                    <a data-toggle="tab" href="#password">
                                         <i class="ion-key"></i>
                                         Password
                                     </a>
@@ -188,13 +188,14 @@
                         <div class="panel-body">
                             <div class="tab-content">
 
-                                <div id="home-2" class="tab-pane active">
+                                <div id="profile" class="tab-pane active">
                                     <h5>Profile Info</h5>
                                     <br>
                                     <div class="col-md-4 ">
                                         <img src="img/26115.jpg" alt="Avatar" class="img-circle" width="120" height="120">
+                                        <br>
+                                        <p class="col-md-offset-1">Profile Picture</p>
                                     </div>
-
                                     <div class="col-md-4 ">
                                         <p><b>Full name</b><br>
                                             User fullname</p>
@@ -209,13 +210,13 @@
                                         <p><b>State</b><br>
                                             Accra</p>
                                         <p><b>Last Amount</b><br>
-                                            100 </p>
+                                            $100.00 </p>
                                         <p><b>Last Login</b><br>
                                             March 1,2018,9 am</p>
                                     </div>
                                     <br>
                                 </div>
-                                <div id="about-2" class="tab-pane ">
+                                <div id="account" class="tab-pane ">
                                     <h5>Account Info</h5>
                                     <p>You will not be able to change the account number and bank name after putting it for the first time, but you can change the account name. To change the account name, please contact support. </p>
                                     <br>
@@ -242,7 +243,7 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div id="contact-2" class="tab-pane ">
+                                <div id="password" class="tab-pane ">
                                     <h5>Change Password</h5>
                                     <br>
                                     <div class="col-md-8 col-lg-offset-2 form-group">
@@ -264,7 +265,7 @@
                         </div>
                     </section>
                 </div>
-                <div class="col-lg-4">
+                <div class="col-md-4">
 
                     <!--chat start-->
                     <section class="panel">
@@ -327,6 +328,13 @@
 <!-- Director for demo purposes -->
 
 
+<script>
+    $('#noti-box').slimScroll({
+        height: '450px',
+        size: '5px',
+        BorderRadius: '5px'
+    });
 
+</script>
 </body>
 </html>
