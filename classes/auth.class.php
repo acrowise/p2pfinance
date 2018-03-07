@@ -469,6 +469,42 @@ class Auth extends MySQL
     public function getMaxSymbols() {
         return $this->forgot_pass['maxSymbols'];
     }
+    public  function checkUser($email){
+        $this->Query("Select * from membership WHERE email = '$email'");
+        if($this->RowCount() > 0){
+            return 1;
+        }else{
+            return 0;
+        }
+    }
+    public function signUp($post){
+        $object = new MySQL();
+        if ($this->checkUser($_POST['email']) == 1) {
+            return 'exist';
+        } else {
+
+            $valuesArray['first_name'] = MySQL::SQLValue($_POST['first_name']);
+            $valuesArray['last_name'] = MySQL::SQLValue($_POST['last_name']);
+            $valuesArray['email'] = MySQL::SQLValue($_POST['email']);
+            $valuesArray['gender'] = MySQL::SQLValue(sha1($_POST['gender']));
+            $valuesArray['mobile'] = MySQL::SQLValue($_POST['mobile']);
+            $valuesArray['region'] = MySQL::SQLValue($_POST['region']);
+            $valuesArray['payment_name'] = MySQL::SQLValue($_POST['p_Name']);
+            $valuesArray['payment_method'] = MySQL::SQLValue($_POST['pMethod']);
+            $valuesArray['mm_number'] = MySQL::SQLValue($_POST['paymentAccount']);
+            $valuesArray['status'] = MySQL::SQLValue('Inactive');
+            $table = 'membership';
+
+            $sql = MySQL::BuildSQLInsert($table, $valuesArray);
+             echo $sql;exit;
+            $check = $object->Query($sql);
+            if ($check) {
+                return "ok";
+            } else {
+                return 'error';
+            }
+        }
+    }
 
 
 }

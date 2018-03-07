@@ -2,9 +2,17 @@
  * Created by jerome on 04/01/2018.
  */
 $(function () {
-    var $btns = $("#loginBtn");
 
-   $(document).on('submit','#loginForm',function (e) {
+
+    $(document).on('click','#signup',function (e) {
+
+
+
+    });
+
+
+
+$(document).on('submit','#loginForm',function (e) {
 
         e.preventDefault();
         $("#unerror").empty();
@@ -56,5 +64,7 @@ $(function () {
         }
 
     });
-});
 
+
+
+});
