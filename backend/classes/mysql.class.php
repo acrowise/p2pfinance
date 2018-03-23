@@ -1842,25 +1842,26 @@ class MySQL
   return $isValid; 
 }
 
-	function checkLogin(){
-		
-	if (!isset($_SESSION)) {session_start();}
-	$MM_authorizedUsers = "1,2,3,4,5,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40";
-	$MM_donotCheckaccess = "false";
-	
-	$MM_restrictGoTo = "../index.php";
-	if (!((isset($_SESSION['P2P_username'])) && ($this->isAuthorized("",$MM_authorizedUsers,
-            $_SESSION['P2P_username'], $_SESSION['P2P_UserGroup'])))) {
-	  $MM_qsChar = "?";
-	  $MM_referrer = $_SERVER['PHP_SELF'];
-	  if (strpos($MM_restrictGoTo, "?")) $MM_qsChar = "&";
-	  if (isset($_SERVER['QUERY_STRING']) && strlen($_SERVER['QUERY_STRING']) > 0) 
-	  $MM_referrer .= "?" . $_SERVER['QUERY_STRING'];
-	  $MM_restrictGoTo = $MM_restrictGoTo. $MM_qsChar . "accesscheck=" . urlencode($MM_referrer);
-	  header("Location: ". $MM_restrictGoTo); 
-	  exit;
-	}	
-	}
+    function checkLogin(){
+
+        if (!isset($_SESSION)) {session_start();}
+
+        $MM_authorizedUsers = "1,2,3,4,5,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21";
+        $MM_donotCheckaccess = "false";
+
+        $MM_restrictGoTo = "../../index.php";
+        if (!((isset($_SESSION['p2pAdm_User']['username'])) && ($this->isAuthorized("",$MM_authorizedUsers,
+                $_SESSION['p2pAdm_User']['username'], $_SESSION['p2pAdm_User']['user_cat'])))) {
+            $MM_qsChar = "?";
+            $MM_referrer = $_SERVER['PHP_SELF'];
+            if (strpos($MM_restrictGoTo, "?")) $MM_qsChar = "&";
+            if (isset($_SERVER['QUERY_STRING']) && strlen($_SERVER['QUERY_STRING']) > 0)
+                $MM_referrer .= "?" . $_SERVER['QUERY_STRING'];
+            $MM_restrictGoTo = $MM_restrictGoTo. $MM_qsChar . "accesscheck=" . urlencode($MM_referrer);
+            header("Location: ". $MM_restrictGoTo);
+            exit;
+        }
+    }
 	
 	function upload($file_id, $folder="", $types="") {
     if(!$_FILES[$file_id]['name']) 
@@ -1913,7 +1914,6 @@ class MySQL
 
     return array($file_name,$result);
 }
-
 
 }
 ?>
